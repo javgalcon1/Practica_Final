@@ -1,0 +1,159 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+title: 'Patrones de distribución de las Estelas decoradas de la Península Ibérica'
+author: "Javier Gallardo Contreras"
+date: '2023-05-31'
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(lmtest)
+library(readxl)
+library(ggplot2)
+```
+ 
+### 1. INTRODUCCIÓN:
+
+La presencia de las conocidas como estelas decoradas, en todas sus variantes, es un elemento distintivo, e incluso identitario, de la compleja composición del paisaje ibérico, por su iconicidad y por el gran simbolismo que desprenden. Mientras que las intervenciones a pequeña escala en el medio paisajístico definieron a las sociedades preneolíticas y/o no agrarias, el Neolítico (y posteriormente la Edad de los Metales: Calcolítico, Bronce y Hierro) se caracterizó por un cambio en la manera en que el ser humano concebía el paisaje, su organización y su transformación (Carrero-Pazos, 2018). Esto se produjo, entre otras cosas, a través de la construcción de una serie de monumentos que, perpetuándose en el tiempo, vertebraron los territorios de las sociedades vivas. Estas singulares manifestaciones artísticas comprenden una horquilla cronológica que ha podido situarse desde principios del Bronce (ca. 2200-850/825 AC) hasta la Edad del Hierro (ca. 850/825-700 AC) (Díaz-Guardaminos, 2010). Sin embargo, debemos aclarar que el fenómeno de las estelas no es algo nuevo ni exclusivo del suroeste peninsular. Con función y simbología general, estos monumentos llevan existiendo en buena parte de la fachada atlántica europea, como mínimo desde el Neolítico, si bien es cierto que la iconografía y detalles de las estelas peninsulares las hacen únicas de esta región en las cronologías previamente mencionadas. Sin ser nuestra pretensión extendernos en exceso en este tema, sería ilustrativo realizar al menos un acercamiento básico a los dos principales tipos en los que se clasifican las estelas de la Prehistoria peninsular:
+
+  - Las más antiguas son las que se conocen como de formato básico, estelas cuya superficie es horadada hacia dentro, representando la propia piedra a una figura antropomorfa como si ella misma portase las armas en las zonas donde las sujetaría una persona, pero evitando crear una verdadera forma antropoide.
+  - A partir de la llegada de los fenicios al sur de la Península Ibérica, comienzan a aparecer las estelas de formato antropomorfo, es decir, la piedra pasa a ser el soporte sobre el que se va a representar el sujeto, ya no recoge la “esencia” del personaje, sino que se graban figuras humanas. Desde el momento que aparecen este tipo de estelas, se enriquece la decoración con todo tipo de objetos que aparecerán representados sobre su superficie: serán frecuente las fíbulas, escudos, espadas, hachas, etc, elementos que funcionan como un buen marcador cronológico (Diaz-Guardamino, 2011). Podemos, a su vez. distinguir dos variantes de las estelas con antropomorfos: 
+      - Las estelas de guerrero, que representan a un individuo guerrero y su panoplia (espada,         arco y flecha).
+      - Las estelas diademadas, que tienen como característica principal un arco a modo de             diadema que rodea la cabeza del sujeto representado (el significado de este símbolo es         aún objeto de debate, pues tiene varias interpretaciones: tocado, aureola, símbolo de          feminidad…). 
+      - Las estelas grupales, en las que aparecen más de un individuo, recreando una escena en         concreto y con varios elementos representados.
+
+Estos singulares monumentos han venido siendo objeto de estudio desde el pasado siglo, pero muy especialmente en las últimas décadas (70-80, en adelante). Sin embargo, y a pesar de ello, las interpretaciones que de estas representaciones simbólico-artísticas se ha dado están aún en desarrollo. Sin negar una posible significación funeraria-conmemorativa (como remarcaron autores como Almagro-Bach en los años 60, haciendo alusión a estas como “estelas-guijarro” o “ídolos-estela”), la creencia de que estos monumentos prehistóricos funcionasen como tumbas fue una primera interpretación que actualmente, aunque continúa vigente, apenas sí tiene cabida en el paradigma “estelar” de la cuestión. Por su parte, la asociación de estelas con caminos, límites de fronteras (geográficas o ecológicas) e hitos visibles, goza de mayor plausibilidad, si bien su significado continúa siendo objeto de una amplia controversia en el panorama epistemológico debido a la posible multifuncionalidad que podrían encerrar. El estudio de las relaciones de las estelas con el espacio que las rodea es crucial para comprender la interrelación que se establece entre ellas y el medio ambiente en que se localizan, es decir, analizar por igual la geografía y la cronología de estos elementos. La aparición de las estelas en lugares significativos de las redes terrestres que comunican las diferentes zonas del Suroeste entre sí y con el exterior puede haber sido su función primordial”, y que las representaciones en ellas grabadas “contengan una información codificada, accesible a quien se mueva por las vías donde fueron situadas” (Galán y Martín, 1993: 17).  En este sentido, la existencia de las estelas del suroeste como hitos significativos en los caminos pudo deberse a lo imprescindible que resultan los marcadores del paisaje al ahora de viajar, ya que “sin ellos, la construcción de estas representaciones mentales y la navegación terrestre serían imposibles” (Murrieta et al, 2011). Así, y adentrándonos en nuestra materia de estudio, es probable que los marcadores en el paisaje durante la Prehistoria (es decir, los primeros marcadores utilizados) constituyesen elementos naturales reconocibles y conspicuos. Siguiendo esta línea, los monumentos megalíticos habrían de ser uno de estos marcadores geográficos, que funcionarían además como manifestaciones intencionadas de marcado carácter simbólico. 
+
+
+### 2. OBJETIVOS:
+
+Una visión de conjunto de la distribución de las estelas del suroeste (que en total suman 125 muestras, sirviéndonos del mapa de Celestino y Paniego) permite comprobar que la mayor parte de ellas se encuentran situadas en puntos estratégicos y singulares geográficamente hablando: puertos de montaña, vados, zonas de contacto entre diferentes suelos, resaltes orográficos, etc. La pregunta que debemos formularnos es la siguiente: ¿responde la ubicación de estos elementos al más puro azar, o de lo contrario sigue unos patrones concretos? El objetivo principal de este trabajo es el de confirmar que efectivamente, la localización de estos singulares monumentos obedecen a una pauta geográfica, que en nuestro caso, y atendiendo a cartografías de autores como Sebastián Celestino Pérez y Pablo Paniego (consultar Fig.1 en Celestino y Paniego, 2021: 73), estaría directamente relacionado con el relieve peninsular. Es decir, la orografía sería el principal factor determinante que explicaría la posición de las estelas decoradas, en detrimento de otras teorías que interpretan las estelas como marcadores de tumbas, símbolos de heroicidad o episodios bélicos. 
+
+
+### 3. METODOLOGÍA:
+
+Expuesto nuestro razonamiento, debemos explicar cómo refutamos la teoría de las estelas como marcadores geográficos y de territorialidad. Para ello, hemos decidido hacer uso de la regresión lineal, un método estadístico utilizado para modelar y analizar la relación entre una variable dependiente (Y) y una o más variables independientes (X). El objetivo de la regresión lineal es encontrar la mejor línea recta que se ajuste a los datos para predecir valores futuros o comprender la relación entre las variables. La regresión lineal asume que la relación entre las variables puede describirse mediante una función lineal. La ecuación de la regresión lineal tiene la forma:
+$$Y = β₀ + β₁X₁ + β₂X₂ + ... + βₚXₚ + ε$$
+Donde:
+
+- Y es la variable dependiente que deseamos predecir o explicar.
+- X₁, X₂, ..., Xₚ son las variables independientes que se utilizan para predecir o explicar Y.
+- β₀, β₁, β₂, ..., βₚ son los coeficientes que representan la contribución de cada variable independiente.
+- ε es el término de error, que representa la variabilidad no explicada por el modelo.
+
+El objetivo de la regresión lineal es estimar los coeficientes β₀, β₁, β₂, ..., βₚ que minimicen la suma de los errores cuadráticos entre los valores observados y los valores predichos por el modelo.
+
+Si trasladamos estos conceptos a nuestro estudio, la relación entre la altitud y el número de estelas prehistóricas diseminadas por la Península Ibérica rigiéndonos mediante los métodos de regresión lineal, conllevarían: 1) Un primer paso, consistente en la recopilación de datos, para lo que hemos reunido datos sobre la altitud y el número de estelas prehistóricas en diferentes ubicaciones de la Península Ibérica, consultando la bibliografía pertinente, así como una base de datos dedicada a las Estelas del Suroeste de la P.I en las que aparecen georreferenciadas todas y cada una de ellas. Pero sin duda, el soporte básico de nuestro trabajo es una cartografía realizada por Sebastián Celestino, que reúne de manera actualizada la ubicación de las principales estelas halladas en la península. 2) Un segundo paso, que conlleva la preparación de dichos datos, organizándolos en un formato adecuado para el análisis de regresión lineal, y asegurándonos de que las observaciones de altitud y número de estelas correspondan adecuadamente. Con este fin, creamos una pequeña base de datos en Excel que servirá como base para importar la información recopilada en R. 3) Un tercer paso, que es el análisis propiamente dicho, aplicando las fórmulas y los conceptos de regresión lineal previamente citados. 4) Un último paso, donde expondremos la interpretación de los resultados de nuestro análisis y llegaremos a unas conclusiones concretas.
+
+### 4. DESARROLLO:
+
+A continuación, 
+
+## 1º) Cargamos la Base de Datos:
+
+```{r data}
+dat <- read_excel(path = "Base de datos Estelas.xlsx")
+colnames(dat) <- c("ID", "Altitud", "Nestelas") # cambiamos el nombre de las columnas
+```
+
+## 2º) Comprobamos la correlación entre las variables:
+
+```{r corr, echo=TRUE}
+cor.test(dat$Altitud, dat$Nestelas) # este paso nos informa sobre las posibilidades de que el valor aportado sea debido al azar. En nuestro caso, observamos una correlación muy significativa con un coeficiente de correlacion de -0.78. 
+
+ggplot(data = dat, aes(x=Altitud, y=Nestelas)) + geom_point()
+```
+
+
+## 3º) Graficamos la distribucion del nº de estelas:
+
+```{r norm}
+ggplot(dat, aes(x=Nestelas)) + geom_bar()
+shapiro.test(dat$Nestelas)
+```
+
+## 4º) Exponemos nuestro conjunto de datos en una tabla:
+
+```{r}
+dat$x2 <- dat$Altitud*dat$Altitud
+dat$xy <- dat$Nestelas*dat$Altitud
+dat #Visualizamos nuestra tabla de datos
+```
+El método de mínimos cuadrados ordinarios calcula la pendiente (B1) y el intercepto (B0) minimizando el cuadrado de las distancias de los puntos x, y en relación con la recta de regresión
+$$y_1 = B_0 + x_1 + e_1$$
+
+## 5º) Generamos el modelo lineal para comprobar si la altitud predice el número de estelas: 
+
+```{r lm}
+modelo <- lm(formula = Nestelas ~ Altitud,data = dat)
+summary(modelo)
+#Con un p-valor de 0.00007, podemos confirmar que sí existe una fuerte relación entre la altitud y el número de estelas. En cuanto a la significancia, tenemos un valor de 0 en los tres asteriscos (máxima confianza), lo que quiere decir que, aunque no tenemos pruebas irrefutables de que la linealidad sea exacta, conlos datos que los que disponemos no podemos evidenciar lo contrario
+
+#Guardamos los coeficientes
+coeficientes <- coef(modelo)
+coeficientes
+```
+
+## 6º) Generamos un gráfico de dispersión:
+
+```{r disp}
+ggplot(dat, aes(Altitud, Nestelas)) +
+  geom_point() +                   # Agregar la nube de puntos
+  geom_abline(intercept = coeficientes[1], slope = coeficientes[2], color = "red") + # Agregar la recta de regresión
+  labs(title= "Gráfico de dispersión",caption = paste("Recta de regresión: Nestelas = ", round(coeficientes[1],2), " + ", round(coeficientes[2],2), "altitud"),
+       x = "Altitud", y = "Nº Estelas") # Editamos los nombres de los ejes
+
+```
+
+
+## 7º) Observamos las medidas de influencia:
+
+```{r inf}
+
+medidas_influencia <- influence.measures(lm(Nestelas ~ Altitud, dat))
+medidas_influencia
+plot(cooks.distance(modelo), pch = 20, main = "Valores de Cook's distance")
+#Los valores de Cook's distance se utilizan en regresión lineal para evaluar la influencia de cada observación individual en el ajuste del modelo. Esta métrica ayuda a identificar observaciones atípicas o influyentes que pueden tener un impacto significativo en los resultados del modelo.
+```
+
+## 8º) Realizamos el supuesto de independencia de los residuos:
+
+```{r res_indep, echo=TRUE}
+dwtest(modelo)
+
+```
+
+## 9º) Confirmamos que los errores del modelo permanecen constantes para todo el  rango de estimaciones:
+
+```{r mod_err, echo=TRUE}
+plot(modelo$fitted.values, modelo$residuals, xlab = "Valores ajustados", ylab = "Residuos")
+```
+
+### 5. CONCLUSIONES:
+
+Desarollado nuestro análisis, procedemos a exponer nuestras interpretaciones a modo de conclusión:
+
+ - La correlación de nuestro modelo es una muy marcada y eminentemente signficativa, con un valor p de -0,78, lo que quiere decir que por cada unidad que aumentamos en altitud, disminuye en 0.78 el número de estelas.
+ - La distribución que muestra nuestro conjunto de datos podría asemejarse a una distribución de tipo normal, pero a falta de una mayor cantidad de datos no podemos atribuila a una como tal.
+ - Cuanto más aumenta la altitud, más se ajusta nuestro modelo a la distribución normal, si bien los valores más bajos en altitud parecen representar una mayor dispersión de las estelas.
+ - Al comprobar el supuesto de independencia de los residuos, comprobamos que estos son independientes, y que los errores del modelo en su mayoría son muy próximos a 0, que es lo deseado.
+ 
+Por tanto, y sin evidencias que parezcan indicar lo contrario, podríamos afirmar que la teoría de que la presencia de las estelas del suroeste viene determinada por la geografía ibérica encaja con nuestras conclusiones. Podemos añadir, además, que es lógico que estos monumentos se sitúen en lugares de baja altitud, debido al coste que debe suponer trasladar materia prima a lugares menos accesibles, como suelen ser los puertos de montaña y las zonas muy elevadas. Esto además concuerda con la idea de que las estelas pudieron haber constituido marcadores paisajísticos de relevancia y de orientación, señalando cruces de caminos y vados de ríos. Así pues, y fuera aparte de las posibles interpretaciones simbólicas que de ellas puedan extraerse, con nuestro trabajo parece quedar claro que, con seguridad, el patrón geográfico de estos megalitos es un hecho.
+ 
+### BIBLIOGRAFÍA:
+
+ - CARRERO-PAZOS, M. (2018): “Modelando dinámicas de movilidad y visibilidad en los paisajes           megalíticos gallegos. El caso del Monte de Santa Mariña y su entorno (Comarca de               Sarria, Lugo)”, Trabajos de Prehistoria, 75 (2), 287-306. 
+ - CELESTINO PÉREZ, S y PANIEGO DÍAZ, P. (2021). Últimas investigaciones sobre las estelas de         guerrero y diademadas de la península Ibérica. Paleohispánica. Revista sobre lenguas y         culturas de la Hispania Antigua. 21. 71-93.
+ - DÍAZ-GUARDAMINO, M. (2010). Las estelas decoradas en la Prehistoria de la Península Ibérica.        Tesis Doctoral, Universidad Complutense de Madrid.
+ - GALÁN DOMINGO, E., MARTÍN BRAVO, A. M. (1992): “Megalitismo y zonas de paso en la cuenca           extremeña del Tajo”, Zephyrus 44-45, 193-205. 
+ - MORAL PELÁEZ, I. (2016). Modelos de regresión: lineal simple y regresión logística. Revista        Seden, 14, 195-214.
+ - RIVERA JIMÉNEZ, T et al. (2021): “The Cañaveral de León stela (Huelva, Spain). A monumental        sculpture in a landscape of settlements and pathways”. Journal of Archaeological               Science:Reports, vol. 40, p. 103-251.
+ - Base de datos: http://www.estelasdecoradas.es/index.php
+
+

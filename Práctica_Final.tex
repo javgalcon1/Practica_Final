@@ -1,0 +1,629 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+title: `Patrones de distribución de las Estelas decoradas de la
+Península Ibérica' author: ``Javier Gallardo Contreras'' date:
+`2023-05-31' output: pdf\_document: default ---
+
+\hypertarget{introducciuxf3n}{%
+\subsubsection{1. INTRODUCCIÓN:}\label{introducciuxf3n}}
+
+La presencia de las conocidas como estelas decoradas, en todas sus
+variantes, es un elemento distintivo, e incluso identitario, de la
+compleja composición del paisaje ibérico, por su iconicidad y por el
+gran simbolismo que desprenden. Mientras que las intervenciones a
+pequeña escala en el medio paisajístico definieron a las sociedades
+preneolíticas y/o no agrarias, el Neolítico (y posteriormente la Edad de
+los Metales: Calcolítico, Bronce y Hierro) se caracterizó por un cambio
+en la manera en que el ser humano concebía el paisaje, su organización y
+su transformación (Carrero-Pazos, 2018). Esto se produjo, entre otras
+cosas, a través de la construcción de una serie de monumentos que,
+perpetuándose en el tiempo, vertebraron los territorios de las
+sociedades vivas. Estas singulares manifestaciones artísticas comprenden
+una horquilla cronológica que ha podido situarse desde principios del
+Bronce (ca. 2200-850/825 AC) hasta la Edad del Hierro (ca. 850/825-700
+AC) (Díaz-Guardaminos, 2010). Sin embargo, debemos aclarar que el
+fenómeno de las estelas no es algo nuevo ni exclusivo del suroeste
+peninsular. Con función y simbología general, estos monumentos llevan
+existiendo en buena parte de la fachada atlántica europea, como mínimo
+desde el Neolítico, si bien es cierto que la iconografía y detalles de
+las estelas peninsulares las hacen únicas de esta región en las
+cronologías previamente mencionadas. Sin ser nuestra pretensión
+extendernos en exceso en este tema, sería ilustrativo realizar al menos
+un acercamiento básico a los dos principales tipos en los que se
+clasifican las estelas de la Prehistoria peninsular:
+
+\begin{itemize}
+\tightlist
+\item
+  Las más antiguas son las que se conocen como de formato básico,
+  estelas cuya superficie es horadada hacia dentro, representando la
+  propia piedra a una figura antropomorfa como si ella misma portase las
+  armas en las zonas donde las sujetaría una persona, pero evitando
+  crear una verdadera forma antropoide.
+\item
+  A partir de la llegada de los fenicios al sur de la Península Ibérica,
+  comienzan a aparecer las estelas de formato antropomorfo, es decir, la
+  piedra pasa a ser el soporte sobre el que se va a representar el
+  sujeto, ya no recoge la ``esencia'' del personaje, sino que se graban
+  figuras humanas. Desde el momento que aparecen este tipo de estelas,
+  se enriquece la decoración con todo tipo de objetos que aparecerán
+  representados sobre su superficie: serán frecuente las fíbulas,
+  escudos, espadas, hachas, etc, elementos que funcionan como un buen
+  marcador cronológico (Diaz-Guardamino, 2011). Podemos, a su vez.
+  distinguir dos variantes de las estelas con antropomorfos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Las estelas de guerrero, que representan a un individuo guerrero y
+    su panoplia (espada, arco y flecha).
+  \item
+    Las estelas diademadas, que tienen como característica principal un
+    arco a modo de diadema que rodea la cabeza del sujeto representado
+    (el significado de este símbolo es aún objeto de debate, pues tiene
+    varias interpretaciones: tocado, aureola, símbolo de
+    feminidad\ldots).
+  \item
+    Las estelas grupales, en las que aparecen más de un individuo,
+    recreando una escena en concreto y con varios elementos
+    representados.
+  \end{itemize}
+\end{itemize}
+
+Estos singulares monumentos han venido siendo objeto de estudio desde el
+pasado siglo, pero muy especialmente en las últimas décadas (70-80, en
+adelante). Sin embargo, y a pesar de ello, las interpretaciones que de
+estas representaciones simbólico-artísticas se ha dado están aún en
+desarrollo. Sin negar una posible significación funeraria-conmemorativa
+(como remarcaron autores como Almagro-Bach en los años 60, haciendo
+alusión a estas como ``estelas-guijarro'' o ``ídolos-estela''), la
+creencia de que estos monumentos prehistóricos funcionasen como tumbas
+fue una primera interpretación que actualmente, aunque continúa vigente,
+apenas sí tiene cabida en el paradigma ``estelar'' de la cuestión. Por
+su parte, la asociación de estelas con caminos, límites de fronteras
+(geográficas o ecológicas) e hitos visibles, goza de mayor
+plausibilidad, si bien su significado continúa siendo objeto de una
+amplia controversia en el panorama epistemológico debido a la posible
+multifuncionalidad que podrían encerrar. El estudio de las relaciones de
+las estelas con el espacio que las rodea es crucial para comprender la
+interrelación que se establece entre ellas y el medio ambiente en que se
+localizan, es decir, analizar por igual la geografía y la cronología de
+estos elementos. La aparición de las estelas en lugares significativos
+de las redes terrestres que comunican las diferentes zonas del Suroeste
+entre sí y con el exterior puede haber sido su función primordial'', y
+que las representaciones en ellas grabadas ``contengan una información
+codificada, accesible a quien se mueva por las vías donde fueron
+situadas'' (Galán y Martín, 1993: 17). En este sentido, la existencia de
+las estelas del suroeste como hitos significativos en los caminos pudo
+deberse a lo imprescindible que resultan los marcadores del paisaje al
+ahora de viajar, ya que ``sin ellos, la construcción de estas
+representaciones mentales y la navegación terrestre serían imposibles''
+(Murrieta et al, 2011). Así, y adentrándonos en nuestra materia de
+estudio, es probable que los marcadores en el paisaje durante la
+Prehistoria (es decir, los primeros marcadores utilizados) constituyesen
+elementos naturales reconocibles y conspicuos. Siguiendo esta línea, los
+monumentos megalíticos habrían de ser uno de estos marcadores
+geográficos, que funcionarían además como manifestaciones intencionadas
+de marcado carácter simbólico.
+
+\hypertarget{objetivos}{%
+\subsubsection{2. OBJETIVOS:}\label{objetivos}}
+
+Una visión de conjunto de la distribución de las estelas del suroeste
+(que en total suman 125 muestras, sirviéndonos del mapa de Celestino y
+Paniego) permite comprobar que la mayor parte de ellas se encuentran
+situadas en puntos estratégicos y singulares geográficamente hablando:
+puertos de montaña, vados, zonas de contacto entre diferentes suelos,
+resaltes orográficos, etc. La pregunta que debemos formularnos es la
+siguiente: ¿responde la ubicación de estos elementos al más puro azar, o
+de lo contrario sigue unos patrones concretos? El objetivo principal de
+este trabajo es el de confirmar que efectivamente, la localización de
+estos singulares monumentos obedecen a una pauta geográfica, que en
+nuestro caso, y atendiendo a cartografías de autores como Sebastián
+Celestino Pérez y Pablo Paniego (consultar Fig.1 en Celestino y Paniego,
+2021: 73), estaría directamente relacionado con el relieve peninsular.
+Es decir, la orografía sería el principal factor determinante que
+explicaría la posición de las estelas decoradas, en detrimento de otras
+teorías que interpretan las estelas como marcadores de tumbas, símbolos
+de heroicidad o episodios bélicos.
+
+\hypertarget{metodologuxeda}{%
+\subsubsection{3. METODOLOGÍA:}\label{metodologuxeda}}
+
+Expuesto nuestro razonamiento, debemos explicar cómo refutamos la teoría
+de las estelas como marcadores geográficos y de territorialidad. Para
+ello, hemos decidido hacer uso de la regresión lineal, un método
+estadístico utilizado para modelar y analizar la relación entre una
+variable dependiente (Y) y una o más variables independientes (X). El
+objetivo de la regresión lineal es encontrar la mejor línea recta que se
+ajuste a los datos para predecir valores futuros o comprender la
+relación entre las variables. La regresión lineal asume que la relación
+entre las variables puede describirse mediante una función lineal. La
+ecuación de la regresión lineal tiene la forma:
+\[Y = β₀ + β₁X₁ + β₂X₂ + ... + βₚXₚ + ε\] Donde:
+
+\begin{itemize}
+\tightlist
+\item
+  Y es la variable dependiente que deseamos predecir o explicar.
+\item
+  X₁, X₂, \ldots, Xₚ son las variables independientes que se utilizan
+  para predecir o explicar Y.
+\item
+  β₀, β₁, β₂, \ldots, βₚ son los coeficientes que representan la
+  contribución de cada variable independiente.
+\item
+  ε es el término de error, que representa la variabilidad no explicada
+  por el modelo.
+\end{itemize}
+
+El objetivo de la regresión lineal es estimar los coeficientes β₀, β₁,
+β₂, \ldots, βₚ que minimicen la suma de los errores cuadráticos entre
+los valores observados y los valores predichos por el modelo.
+
+Si trasladamos estos conceptos a nuestro estudio, la relación entre la
+altitud y el número de estelas prehistóricas diseminadas por la
+Península Ibérica rigiéndonos mediante los métodos de regresión lineal,
+conllevarían: 1) Un primer paso, consistente en la recopilación de
+datos, para lo que hemos reunido datos sobre la altitud y el número de
+estelas prehistóricas en diferentes ubicaciones de la Península Ibérica,
+consultando la bibliografía pertinente, así como una base de datos
+dedicada a las Estelas del Suroeste de la P.I en las que aparecen
+georreferenciadas todas y cada una de ellas. Pero sin duda, el soporte
+básico de nuestro trabajo es una cartografía realizada por Sebastián
+Celestino, que reúne de manera actualizada la ubicación de las
+principales estelas halladas en la península. 2) Un segundo paso, que
+conlleva la preparación de dichos datos, organizándolos en un formato
+adecuado para el análisis de regresión lineal, y asegurándonos de que
+las observaciones de altitud y número de estelas correspondan
+adecuadamente. Con este fin, creamos una pequeña base de datos en Excel
+que servirá como base para importar la información recopilada en R. 3)
+Un tercer paso, que es el análisis propiamente dicho, aplicando las
+fórmulas y los conceptos de regresión lineal previamente citados. 4) Un
+último paso, donde expondremos la interpretación de los resultados de
+nuestro análisis y llegaremos a unas conclusiones concretas.
+
+\hypertarget{desarrollo}{%
+\subsubsection{4. DESARROLLO:}\label{desarrollo}}
+
+A continuación,
+
+\hypertarget{uxba-cargamos-la-base-de-datos}{%
+\subsection{1º) Cargamos la Base de
+Datos:}\label{uxba-cargamos-la-base-de-datos}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\AttributeTok{path =} \StringTok{"Base de datos Estelas.xlsx"}\NormalTok{)}
+\FunctionTok{colnames}\NormalTok{(dat) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"ID"}\NormalTok{, }\StringTok{"Altitud"}\NormalTok{, }\StringTok{"Nestelas"}\NormalTok{) }\CommentTok{\# cambiamos el nombre de las columnas}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{uxba-comprobamos-la-correlaciuxf3n-entre-las-variables}{%
+\subsection{2º) Comprobamos la correlación entre las
+variables:}\label{uxba-comprobamos-la-correlaciuxf3n-entre-las-variables}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor.test}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{Altitud, dat}\SpecialCharTok{$}\NormalTok{Nestelas) }\CommentTok{\# este paso nos informa sobre las posibilidades de que el valor aportado sea debido al azar. En nuestro caso, observamos una correlación muy significativa con un coeficiente de correlacion de {-}0.78. }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  dat$Altitud and dat$Nestelas
+## t = -5.2148, df = 17, p-value = 7.009e-05
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.9132523 -0.5130022
+## sample estimates:
+##        cor 
+## -0.7844309
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ dat, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Altitud, }\AttributeTok{y=}\NormalTok{Nestelas)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Práctica_Final_files/figure-latex/corr-1.pdf}
+
+\hypertarget{uxba-graficamos-la-distribucion-del-nuxba-de-estelas}{%
+\subsection{3º) Graficamos la distribucion del nº de
+estelas:}\label{uxba-graficamos-la-distribucion-del-nuxba-de-estelas}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dat, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Nestelas)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Práctica_Final_files/figure-latex/norm-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{shapiro.test}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{Nestelas)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Shapiro-Wilk normality test
+## 
+## data:  dat$Nestelas
+## W = 0.87693, p-value = 0.01899
+\end{verbatim}
+
+\hypertarget{uxba-exponemos-nuestro-conjunto-de-datos-en-una-tabla}{%
+\subsection{4º) Exponemos nuestro conjunto de datos en una
+tabla:}\label{uxba-exponemos-nuestro-conjunto-de-datos-en-una-tabla}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat}\SpecialCharTok{$}\NormalTok{x2 }\OtherTok{\textless{}{-}}\NormalTok{ dat}\SpecialCharTok{$}\NormalTok{Altitud}\SpecialCharTok{*}\NormalTok{dat}\SpecialCharTok{$}\NormalTok{Altitud}
+\NormalTok{dat}\SpecialCharTok{$}\NormalTok{xy }\OtherTok{\textless{}{-}}\NormalTok{ dat}\SpecialCharTok{$}\NormalTok{Nestelas}\SpecialCharTok{*}\NormalTok{dat}\SpecialCharTok{$}\NormalTok{Altitud}
+\NormalTok{dat }\CommentTok{\#Visualizamos nuestra tabla de datos}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 19 x 5
+##       ID Altitud Nestelas      x2    xy
+##    <dbl>   <dbl>    <dbl>   <dbl> <dbl>
+##  1     1      50        6    2500   300
+##  2     2     100       18   10000  1800
+##  3     3     200        9   40000  1800
+##  4     4     300       21   90000  6300
+##  5     5     400       14  160000  5600
+##  6     6     500       12  250000  6000
+##  7     7     600       10  360000  6000
+##  8     8     700        6  490000  4200
+##  9     9     800        1  640000   800
+## 10    10     900        6  810000  5400
+## 11    11    1000        5 1000000  5000
+## 12    12    1100        4 1210000  4400
+## 13    13    1200        4 1440000  4800
+## 14    14    1300        2 1690000  2600
+## 15    15    1400        3 1960000  4200
+## 16    16    1500        2 2250000  3000
+## 17    17    1600        1 2560000  1600
+## 18    18    1700        1 2890000  1700
+## 19    19    1800        0 3240000     0
+\end{verbatim}
+
+El método de mínimos cuadrados ordinarios calcula la pendiente (B1) y el
+intercepto (B0) minimizando el cuadrado de las distancias de los puntos
+x, y en relación con la recta de regresión \[y_1 = B_0 + x_1 + e_1\]
+
+\hypertarget{uxba-generamos-el-modelo-lineal-para-comprobar-si-la-altitud-predice-el-nuxfamero-de-estelas}{%
+\subsection{5º) Generamos el modelo lineal para comprobar si la altitud
+predice el número de
+estelas:}\label{uxba-generamos-el-modelo-lineal-para-comprobar-si-la-altitud-predice-el-nuxfamero-de-estelas}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{modelo }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ Nestelas }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Altitud,}\AttributeTok{data =}\NormalTok{ dat)}
+\FunctionTok{summary}\NormalTok{(modelo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Nestelas ~ Altitud, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -7.7692 -1.0712  0.3019  1.0669  9.3391 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 14.190814   1.703852   8.329 2.10e-07 ***
+## Altitud     -0.008433   0.001617  -5.215 7.01e-05 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.831 on 17 degrees of freedom
+## Multiple R-squared:  0.6153, Adjusted R-squared:  0.5927 
+## F-statistic: 27.19 on 1 and 17 DF,  p-value: 7.009e-05
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Con un p{-}valor de 0.00007, podemos confirmar que sí existe una fuerte relación entre la altitud y el número de estelas. En cuanto a la significancia, tenemos un valor de 0 en los tres asteriscos (máxima confianza), lo que quiere decir que, aunque no tenemos pruebas irrefutables de que la linealidad sea exacta, conlos datos que los que disponemos no podemos evidenciar lo contrario}
+
+\CommentTok{\#Guardamos los coeficientes}
+\NormalTok{coeficientes }\OtherTok{\textless{}{-}} \FunctionTok{coef}\NormalTok{(modelo)}
+\NormalTok{coeficientes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  (Intercept)      Altitud 
+## 14.190814461 -0.008432972
+\end{verbatim}
+
+\hypertarget{uxba-generamos-un-gruxe1fico-de-dispersiuxf3n}{%
+\subsection{6º) Generamos un gráfico de
+dispersión:}\label{uxba-generamos-un-gruxe1fico-de-dispersiuxf3n}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dat, }\FunctionTok{aes}\NormalTok{(Altitud, Nestelas)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}                   \CommentTok{\# Agregar la nube de puntos}
+  \FunctionTok{geom\_abline}\NormalTok{(}\AttributeTok{intercept =}\NormalTok{ coeficientes[}\DecValTok{1}\NormalTok{], }\AttributeTok{slope =}\NormalTok{ coeficientes[}\DecValTok{2}\NormalTok{], }\AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Agregar la recta de regresión}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title=} \StringTok{"Gráfico de dispersión"}\NormalTok{,}\AttributeTok{caption =} \FunctionTok{paste}\NormalTok{(}\StringTok{"Recta de regresión: Nestelas = "}\NormalTok{, }\FunctionTok{round}\NormalTok{(coeficientes[}\DecValTok{1}\NormalTok{],}\DecValTok{2}\NormalTok{), }\StringTok{" + "}\NormalTok{, }\FunctionTok{round}\NormalTok{(coeficientes[}\DecValTok{2}\NormalTok{],}\DecValTok{2}\NormalTok{), }\StringTok{"altitud"}\NormalTok{),}
+       \AttributeTok{x =} \StringTok{"Altitud"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Nº Estelas"}\NormalTok{) }\CommentTok{\# Editamos los nombres de los ejes}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Práctica_Final_files/figure-latex/disp-1.pdf}
+
+\hypertarget{uxba-observamos-las-medidas-de-influencia}{%
+\subsection{7º) Observamos las medidas de
+influencia:}\label{uxba-observamos-las-medidas-de-influencia}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{medidas\_influencia }\OtherTok{\textless{}{-}} \FunctionTok{influence.measures}\NormalTok{(}\FunctionTok{lm}\NormalTok{(Nestelas }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Altitud, dat))}
+\NormalTok{medidas\_influencia}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Influence measures of
+##   lm(formula = Nestelas ~ Altitud, data = dat) :
+## 
+##       dfb.1_  dfb.Altt    dffit cov.r   cook.d    hat inf
+## 1  -1.223114  1.031730 -1.22351 0.685 5.60e-01 0.1822   *
+## 2   0.610876 -0.506538  0.61174 1.088 1.78e-01 0.1674    
+## 3  -0.396055  0.315408 -0.39875 1.167 7.96e-02 0.1406    
+## 4   1.159311 -0.877001  1.18098 0.467 4.48e-01 0.1173   *
+## 5   0.274255 -0.193893  0.28557 1.141 4.14e-02 0.0976    
+## 6   0.148745 -0.095780  0.16090 1.185 1.35e-02 0.0815    
+## 7   0.053922 -0.030241  0.06216 1.205 2.05e-03 0.0690    
+## 8  -0.119427  0.053310 -0.15260 1.148 1.21e-02 0.0599    
+## 9  -0.295593  0.082376 -0.44394 0.811 8.63e-02 0.0545    
+## 10 -0.019183  0.000179 -0.03689 1.188 7.22e-04 0.0526    
+## 11 -0.016890 -0.008351 -0.04735 1.188 1.19e-03 0.0543    
+## 12 -0.011587 -0.020553 -0.06021 1.192 1.92e-03 0.0596    
+## 13 -0.000209 -0.002431 -0.00506 1.212 1.36e-05 0.0684    
+## 14  0.008606 -0.056928 -0.09645 1.212 4.91e-03 0.0808    
+## 15 -0.010621  0.036248  0.05369 1.246 1.53e-03 0.0967    
+## 16 -0.012843  0.033153  0.04482 1.275 1.07e-03 0.1162    
+## 17 -0.011892  0.026155  0.03316 1.310 5.84e-04 0.1393    
+## 18 -0.059297  0.117399  0.14208 1.336 1.07e-02 0.1659    
+## 19 -0.064356  0.118242  0.13824 1.391 1.01e-02 0.1961   *
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{cooks.distance}\NormalTok{(modelo), }\AttributeTok{pch =} \DecValTok{20}\NormalTok{, }\AttributeTok{main =} \StringTok{"Valores de Cook\textquotesingle{}s distance"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Práctica_Final_files/figure-latex/inf-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Los valores de Cook\textquotesingle{}s distance se utilizan en regresión lineal para evaluar la influencia de cada observación individual en el ajuste del modelo. Esta métrica ayuda a identificar observaciones atípicas o influyentes que pueden tener un impacto significativo en los resultados del modelo.}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{uxba-realizamos-el-supuesto-de-independencia-de-los-residuos}{%
+\subsection{8º) Realizamos el supuesto de independencia de los
+residuos:}\label{uxba-realizamos-el-supuesto-de-independencia-de-los-residuos}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dwtest}\NormalTok{(modelo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Durbin-Watson test
+## 
+## data:  modelo
+## DW = 1.98, p-value = 0.3778
+## alternative hypothesis: true autocorrelation is greater than 0
+\end{verbatim}
+
+\hypertarget{uxba-confirmamos-que-los-errores-del-modelo-permanecen-constantes-para-todo-el-rango-de-estimaciones}{%
+\subsection{9º) Confirmamos que los errores del modelo permanecen
+constantes para todo el rango de
+estimaciones:}\label{uxba-confirmamos-que-los-errores-del-modelo-permanecen-constantes-para-todo-el-rango-de-estimaciones}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(modelo}\SpecialCharTok{$}\NormalTok{fitted.values, modelo}\SpecialCharTok{$}\NormalTok{residuals, }\AttributeTok{xlab =} \StringTok{"Valores ajustados"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"Residuos"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Práctica_Final_files/figure-latex/mod_err-1.pdf}
+
+\hypertarget{conclusiones}{%
+\subsubsection{5. CONCLUSIONES:}\label{conclusiones}}
+
+Desarollado nuestro análisis, procedemos a exponer nuestras
+interpretaciones a modo de conclusión:
+
+\begin{itemize}
+\tightlist
+\item
+  La correlación de nuestro modelo es una muy marcada y eminentemente
+  signficativa, con un valor p de -0,78, lo que quiere decir que por
+  cada unidad que aumentamos en altitud, disminuye en 0.78 el número de
+  estelas.
+\item
+  La distribución que muestra nuestro conjunto de datos podría
+  asemejarse a una distribución de tipo normal, pero a falta de una
+  mayor cantidad de datos no podemos atribuila a una como tal.
+\item
+  Cuanto más aumenta la altitud, más se ajusta nuestro modelo a la
+  distribución normal, si bien los valores más bajos en altitud parecen
+  representar una mayor dispersión de las estelas.
+\item
+  Al comprobar el supuesto de independencia de los residuos, comprobamos
+  que estos son independientes, y que los errores del modelo en su
+  mayoría son muy próximos a 0, que es lo deseado.
+\end{itemize}
+
+Por tanto, y sin evidencias que parezcan indicar lo contrario, podríamos
+afirmar que la teoría de que la presencia de las estelas del suroeste
+viene determinada por la geografía ibérica encaja con nuestras
+conclusiones. Podemos añadir, además, que es lógico que estos monumentos
+se sitúen en lugares de baja altitud, debido al coste que debe suponer
+trasladar materia prima a lugares menos accesibles, como suelen ser los
+puertos de montaña y las zonas muy elevadas. Esto además concuerda con
+la idea de que las estelas pudieron haber constituido marcadores
+paisajísticos de relevancia y de orientación, señalando cruces de
+caminos y vados de ríos. Así pues, y fuera aparte de las posibles
+interpretaciones simbólicas que de ellas puedan extraerse, con nuestro
+trabajo parece quedar claro que, con seguridad, el patrón geográfico de
+estos megalitos es un hecho.
+
+\hypertarget{bibliografuxeda}{%
+\subsubsection{BIBLIOGRAFÍA:}\label{bibliografuxeda}}
+
+\begin{itemize}
+\tightlist
+\item
+  CARRERO-PAZOS, M. (2018): ``Modelando dinámicas de movilidad y
+  visibilidad en los paisajes megalíticos gallegos. El caso del Monte de
+  Santa Mariña y su entorno (Comarca de Sarria, Lugo)'', Trabajos de
+  Prehistoria, 75 (2), 287-306.
+\item
+  CELESTINO PÉREZ, S y PANIEGO DÍAZ, P. (2021). Últimas investigaciones
+  sobre las estelas de guerrero y diademadas de la península Ibérica.
+  Paleohispánica. Revista sobre lenguas y culturas de la Hispania
+  Antigua. 21. 71-93.
+\item
+  DÍAZ-GUARDAMINO, M. (2010). Las estelas decoradas en la Prehistoria de
+  la Península Ibérica. Tesis Doctoral, Universidad Complutense de
+  Madrid.
+\item
+  GALÁN DOMINGO, E., MARTÍN BRAVO, A. M. (1992): ``Megalitismo y zonas
+  de paso en la cuenca extremeña del Tajo'', Zephyrus 44-45, 193-205.
+\item
+  MORAL PELÁEZ, I. (2016). Modelos de regresión: lineal simple y
+  regresión logística. Revista Seden, 14, 195-214.
+\item
+  RIVERA JIMÉNEZ, T et al.~(2021): ``The Cañaveral de León stela
+  (Huelva, Spain). A monumental sculpture in a landscape of settlements
+  and pathways''. Journal of Archaeological Science:Reports, vol.~40,
+  p.~103-251.
+\item
+  Base de datos: \url{http://www.estelasdecoradas.es/index.php}
+\end{itemize}
+
+\end{document}
